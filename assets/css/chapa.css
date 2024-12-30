@@ -1,0 +1,13 @@
+.chapa{
+    height:80px;
+    width:80px;
+}
+
+#carne_assada{
+    background-color: brown !important;
+}
+
+.tamanho_carne{
+    height:50px; 
+    width:50px;
+}
