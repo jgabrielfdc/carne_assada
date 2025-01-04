@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     function temCarne(){
         let temCarne;
@@ -51,7 +52,7 @@ $(document).ready(function(){
     })
    
     $("#carne_assada").ready(function(){
-        $("#timer").on("click",function(){
+        $(this).on("click",function(){
         
             $("#prato").prepend($("#carne_assada"));
             $("#timer").html("");
