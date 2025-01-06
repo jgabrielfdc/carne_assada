@@ -20,6 +20,12 @@
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script>
         <script src="assets/js/cook.js"></script>
+
+
+        <!--Objetos-->
+        
+        <script src="assets/js/Carne.js"></script>
+        <script src="assets/js/CaixaDeCarne.js"></script>
     </head>
     <body>
         <section class="bg-success p-5 border d-flex flex-row justify-content-around" id="cozinha">
@@ -34,5 +40,25 @@
             </div>          
 
         </section>
+
+
+        <script>
+            Object.prototype={
+                temCarne:function(){
+                    if($(this)[0].children.length<2){
+                        return true;
+                    }else{
+                        return false
+                    }
+                }
+            }
+            let carne=new Carne("carne_crua");
+            let caixaCarne=new CaixaCarne(carne);
+            let chapa=new Chapa($("#chapa"),caixaCarne.carne.tempoCozinha);
+
+            console.log(caixaCarne.carne.tempoCozinha);
+            console.log(carne.textura);
+        </script>
+
     </body>
 </html>

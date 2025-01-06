@@ -1,11 +1,12 @@
-import 
-function CaixaDeCarne(){
-    this.carne;
+class CaixaCarne{
+    constructor(carne){
+        this.carne=carne;
+    }
 }
 
-CaixaDeCarne.prototype={
+CaixaCarne.prototype={
     adicionaCarne:function(){
-        this.carne=document.createElement("img");
+        this.carne=
         carne=$(this.carne);
 
         carne.addClass("tamanho_carne");
@@ -13,6 +14,7 @@ CaixaDeCarne.prototype={
         carne.attr("id","carne_crua");
         carne.attr("src","assets/imgs/carne_crua.png");
         
-        $("#chapa")
+        $("#chapa").prepend(carne);
     }
 }
+
