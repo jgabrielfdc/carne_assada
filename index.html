@@ -1,73 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link href="assets/css/chapa.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="assets/css/chapa.css" rel="stylesheet">
 
-        <script>
-            Object.prototype.temCarne=
-                function(){
-                    let id=$(this).attr("id");
-                    let qntdCarne=$("#"+id)[0].children.length;
-                    if(qntdCarne<2){
-                        return true;
-                    }else{
-                        return false
-                }
-            }
-        </script>
-        <script src="assets/js/cook.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+    </script>
 
 
-        <!--Objetos-->
+    <!--Objetos-->
+
+    <script src="assets/js/Carne.js"></script>
+    <script src="assets/js/CaixaDeCarne.js"></script>
+    <script src="assets/js/Chapa.js"></script>
+
+    <script>
+        let carne = new Carne("carne_crua");
+        let caixaCarne = new CaixaCarne(carne);
+        let chapa = new Chapa($("#chapa"), carne.tempoCozinha);
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <section id="balcao" style="height:130px;" class="w-100 bg-light">
+
+    </section>
+
+    <section id="cozinha">
+
+        <ul class="list-group">
+            <li class="bg-success px-5 pt-3 pb-2 d-flex flex-row justify-content-around h-100">
+                <div class="bg-secondary chapa rounded-circle p-3" id="chapa">
+                    <p style="position:relative;top:-100px; float:initial; cursor:pointer; user-select: none;" id="timer"
+                        class="bg-light px-auto text-center rounded"></p>
+                </div>
         
-        <script src="assets/js/Carne.js"></script>
-        <script src="assets/js/CaixaDeCarne.js"></script>
-        <script src="assets/js/Chapa.js"></script>
-    </head>
-    <body>
-        <section class="bg-success p-5 border d-flex flex-row justify-content-around" id="cozinha">
+                <div class="bg-light chapa rounded-circle p-3" id="prato"></div>
+        
+                <div id="fonte_carne"
+                    style="background-image: url('assets/imgs/caixa.png'); height:75px; width:75px; background-repeat: no-repeat; background-size: cover;"
+                    class="d-flex justify-content-center align-items-center">
+                    <img src="assets/imgs/carne_crua.png" id="fonte_carne" class="h-50 w-50">
+                </div>
+            </li>
+            <li class="h-100" style="background-color: #1e7b34;">
+                <div class="h-100 w-100">
+                    <h2 style="color:#1e7b34">Hidden</h2>
+                </div>
+            </li>
+        </ul>
+       
+    </section>
 
-            <div class="bg-secondary chapa rounded-circle p-3" id="chapa">
-                <p style="position:relative;top:-100px; float:initial; cursor:pointer; user-select: none;" id="timer" class="bg-light px-auto text-center rounded"></p>
-            </div>
-            
-            <div class="bg-light chapa rounded-circle p-3" id="prato"></div>
-            <div id="fonte_carne" style="background-image: url('assets/imgs/caixa.png'); height:75px; width:75px; background-repeat: no-repeat; background-size: cover;" class="d-flex justify-content-center align-items-center">
-                <img src="assets/imgs/carne_crua.png"  id="fonte_carne" class="h-50 w-50"> 
-            </div>          
+    <script src="assets/js/cook.js">
+    </script>
+    <script src="assets/js/serve.js">
+    </script>
+</body>
 
-        </section>
-
-        <button onclick="console.log(temCarne());" id="eu">
-        </button>
-
-        <script>
-           
-            let carne=new Carne("carne_crua");
-            let caixaCarne=new CaixaCarne(carne);
-            let chapa=new Chapa($("#chapa"),caixaCarne.carne.tempoCozinha);
-
-            console.log(caixaCarne.carne.tempoCozinha);
-            console.log(carne);
-
-        </script>
-
-    </body>
 </html>
