@@ -12,7 +12,9 @@ CaixaCarne.prototype.adicionaCarne=function(){
         carne.attr("src","assets/imgs/carne_crua.png");
         carne.attr("onclick","chapa.tiraCarne('#carne_assada');");
         
-        $("#chapa").prepend(carne);
+    let chapa=$("#chapa")
+        chapa.css("background","url('assets/imgs/Grelha_on.png'");
+        chapa.prepend(carne);
 }
 
 
