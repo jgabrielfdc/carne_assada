@@ -28,7 +28,7 @@ Chapa.prototype.assaCarne=function(){
 };
 
 Chapa.prototype.tiraCarne=function(id){
-     $("#chapa").css("background","url('assets/imgs/Grelha_off.jpg')")
+     $("#chapa").css("background","url('assets/imgs/Grelha/Grelha_off.jpg')")
      $("#prato").prepend($(id));
      $("#timer").html("");
 

@@ -1,5 +1,5 @@
 class CaixaCarne{
-    constructor(carne,temCarne){
+    constructor(carne){
         this.carne=$(carne.carne);
     }
 }
@@ -13,7 +13,7 @@ CaixaCarne.prototype.adicionaCarne=function(){
         carne.attr("onclick","chapa.tiraCarne('#carne_assada');");
         
     let chapa=$("#chapa")
-        chapa.css("background","url('assets/imgs/Grelha_on.png'");
+        chapa.css("background","url('assets/imgs/Grelha/Grelha_on.png'");
         chapa.prepend(carne);
 }
 
