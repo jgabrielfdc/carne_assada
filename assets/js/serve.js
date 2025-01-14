@@ -1,10 +1,13 @@
 $(document).ready(function(){
         let lista_clientes=[];
         $("#clientes div ul").children().each(function(){
-                let cliente=$(this).parent().parent().attr("id")
-                lista_clientes.push(cliente);
-                lista_clientes[cliente]=[];
-                lista_clientes[cliente].push($(this).attr("id"));
+                let id=$(this).parent().parent().attr('id')
+                let cliente='#'+id;
+                lista_clientes.push(id);
+                lista_clientes[id]=[];
+                $(cliente+" ul").children().each(function(){
+                        let pedido=$(this).attr("id");
+                        lista_clientes[id].push(pedido);
+                })
        })
-       console.log(lista_clientes);
 })
