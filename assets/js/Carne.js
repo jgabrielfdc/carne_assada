@@ -1,11 +1,6 @@
 class Carne{
-    constructor(textura){
-        this.textura="assets/imgs/"+textura.toString()+".png";
+    constructor(){
+        this.textura="assets/imgs/carne_crua.png";
         this.carne=document.createElement("img");
-        this.tempoCozinha=5;
     }
-}
-
-Carne.prototype={
-    
 }

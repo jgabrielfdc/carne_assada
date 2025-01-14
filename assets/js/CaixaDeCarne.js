@@ -1,11 +1,10 @@
+
 class CaixaCarne{
-    constructor(carne){
-        this.carne=$(carne.carne);
-    }
 }
 
 CaixaCarne.prototype.adicionaCarne=function(){
-    let carne=this.carne;   
+    let carneObj=new Carne();
+    let carne=$(carneObj.carne);   
         carne.addClass("tamanho_carne");
         carne.css("cursor","pointer");
         carne.attr("id","carne_crua");

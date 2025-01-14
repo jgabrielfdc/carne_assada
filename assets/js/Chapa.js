@@ -1,6 +1,6 @@
 class Chapa{
-    constructor(chapa,tempoCozimento){
-        this.chapa=chapa;
+    constructor(tempoCozimento){
+        this.chapa=$("#chapa");
         this.tempoCozimento=tempoCozimento;
     }
 }
@@ -28,8 +28,10 @@ Chapa.prototype.assaCarne=function(){
 };
 
 Chapa.prototype.tiraCarne=function(id){
-     $("#chapa").css("background","url('assets/imgs/Grelha/Grelha_off.jpg')")
-     $("#prato").prepend($(id));
-     $("#timer").html("");
+     if($("#prato")[0].children.length<1){
+        $("#chapa").css("background","url('assets/imgs/Grelha/Grelha_off.jpg')")
+        $("#prato").prepend($(id));
+        $("#timer").html("");
 
+     }
 }
